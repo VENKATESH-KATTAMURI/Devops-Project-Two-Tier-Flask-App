@@ -53,15 +53,6 @@ docker compose down
 ### 7. Deployment Success & Application Live
 ![Deployment Success](./Screenshots/7.png)
 *Successfully deployed application with messages persisting in MySQL database*
-*Container logs showing Flask app running and MySQL healthy status*
-
-### 7. GitHub Webhook Configuration
-![GitHub Webhook](./screenshots/7_github_webhook.md)
-*Webhook setup for automatic Jenkins trigger on GitHub push*
-
-### 8. AWS EC2 Deployment
-![AWS EC2](./screenshots/8_aws_ec2.md)
-*Production deployment on AWS EC2 with running containers and services*
 
 ---
 
@@ -239,28 +230,6 @@ nano app.py
 ## 📖 Full Docs
 
 For detailed setup, refer to [Full README Guide](./DETAILED_README.md)
-
----
-
-## 📸 Adding Screenshots
-
-To add actual screenshots:
-
-1. Take screenshots of each step (app running, Docker output, Jenkins, etc.)
-2. Save them in `screenshots/` folder:
-   - `1_app_home.png` - Flask app home page
-   - `2_docker_ps.png` - Docker compose ps output
-   - `3_message_board.png` - Message board UI
-   - `4_jenkins_pipeline.png` - Jenkins job output
-   - `5_mysql_data.png` - MySQL query results
-   - `6_docker_logs.png` - Docker compose logs
-   - `7_github_webhook.png` - GitHub webhook config
-   - `8_aws_ec2.png` - Running app on AWS
-
-3. Update README image references:
-```markdown
-![App Home](./screenshots/1_app_home.png)
-```
 
 ---
 
