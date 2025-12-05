@@ -26,33 +26,32 @@ docker compose down
 
 ## 📸 Project Screenshots
 
-### 1. Project Setup & Initial Configuration
+
 ![Setup](./Screenshots/1.png)
-*Initial project structure and Docker setup configuration*
 
-### 2. Docker Build Process
+
+
 ![Docker Build](./Screenshots/2.png)
-*Building Docker images for Flask application and MySQL database*
 
-### 3. Docker Containers Running
+
+
 ![Containers Running](./Screenshots/3.png)
-*Flask app and MySQL containers running with health checks passed*
 
-### 4. Application Home Page
+
+
 ![Application Home](./Screenshots/4.png)
-*Landing page featuring message board with Venkatesh Kattamuri branding*
 
-### 5. Jenkins Pipeline Configuration
+
+
 ![Jenkins Setup](./Screenshots/5.png)
-*Jenkins CI/CD pipeline configuration with GitHub integration*
 
-### 6. Jenkins Build Execution
+
+
 ![Jenkins Build](./Screenshots/6.png)
-*Automated build and deployment process through Jenkins pipeline*
 
-### 7. Deployment Success & Application Live
+
 ![Deployment Success](./Screenshots/7.png)
-*Successfully deployed application with messages persisting in MySQL database*
+
 
 ---
 
