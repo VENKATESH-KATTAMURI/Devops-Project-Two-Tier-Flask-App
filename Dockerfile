@@ -14,7 +14,11 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code
+# Copy the application code
+COPY app.py .
+COPY templates/ templates/
+
+# Copy any remaining files
 COPY . .
 
 # Expose the port the app runs on
