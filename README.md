@@ -1,4 +1,4 @@
-# Venkatesh Kattamuri | Two-Tier Flask + MySQL
+# Two-Tier Flask + MySQL
 
 A production-ready DevOps project with Flask web app, MySQL database, Docker containerization, and Jenkins CI/CD automation.
 
