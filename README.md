@@ -1,4 +1,4 @@
-# Venkatesh Kattamuri | Two-Tier Flask + MySQL
+# Two-Tier Flask + MySQL
 
 A production-ready DevOps project with Flask web app, MySQL database, Docker containerization, and Jenkins CI/CD automation.
 
@@ -24,30 +24,35 @@ docker compose down
 
 ---
 
-## 📸 Screenshots
+## 📸 Project Screenshots
 
-### 1. Application Home Page
-![App Home](./screenshots/1_app_home.md)
-*Landing page with Venkatesh Kattamuri branding and message board interface*
+### 1. Project Setup & Initial Configuration
+![Setup](./Screenshots/1.png)
+*Initial project structure and Docker setup configuration*
 
-### 2. Docker Containers Status
-![Docker PS](./screenshots/2_docker_ps.md)
-*Running containers: Flask app + MySQL database in healthy state*
+### 2. Docker Build Process
+![Docker Build](./Screenshots/2.png)
+*Building Docker images for Flask application and MySQL database*
 
-### 3. Message Board UI
-![Message Board](./screenshots/3_message_board.md)
-*Interactive message board with real-time submissions and persistent storage*
+### 3. Docker Containers Running
+![Containers Running](./Screenshots/3.png)
+*Flask app and MySQL containers running with health checks passed*
 
-### 4. Jenkins Pipeline Build
-![Jenkins Pipeline](./screenshots/4_jenkins_pipeline.md)
-*Automated CI/CD pipeline: Clone → Build → Deploy stages*
+### 4. Application Home Page
+![Application Home](./Screenshots/4.png)
+*Landing page featuring message board with Venkatesh Kattamuri branding*
 
-### 5. MySQL Database Verification
-![MySQL Data](./screenshots/5_mysql_data.md)
-*Persistent messages stored in MySQL database with data persistence*
+### 5. Jenkins Pipeline Configuration
+![Jenkins Setup](./Screenshots/5.png)
+*Jenkins CI/CD pipeline configuration with GitHub integration*
 
-### 6. Docker Compose Logs
-![Docker Logs](./screenshots/6_docker_logs.md)
+### 6. Jenkins Build Execution
+![Jenkins Build](./Screenshots/6.png)
+*Automated build and deployment process through Jenkins pipeline*
+
+### 7. Deployment Success & Application Live
+![Deployment Success](./Screenshots/7.png)
+*Successfully deployed application with messages persisting in MySQL database*
 *Container logs showing Flask app running and MySQL healthy status*
 
 ### 7. GitHub Webhook Configuration
