@@ -3,194 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two-Tier Flask App</title>
+    <title>Venkatesh Kattamuri | Message Board</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+            background: radial-gradient(circle at 20% 20%, rgba(104,117,245,0.25), transparent 30%),
+                        radial-gradient(circle at 80% 0%, rgba(118,75,162,0.25), transparent 30%),
+                        linear-gradient(135deg, #0d0f2b 0%, #10152e 40%, #0a0c1d 100%);
+            color: #e5e7ef;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
+            justify-content: center;
+            padding: 24px;
         }
-        
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
+
+        .card {
+            width: min(960px, 95vw);
+            background: rgba(20, 23, 46, 0.85);
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+            border-radius: 24px;
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 28px;
         }
-        
-        h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            text-align: center;
+
+        @media (max-width: 900px) {
+            .card { grid-template-columns: 1fr; }
         }
-        
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 3px solid rgba(118,75,162,0.5);
+            background: radial-gradient(circle at 30% 30%, #7dd3fc, #6366f1 60%, #312e81);
+            box-shadow: 0 10px 30px rgba(118,75,162,0.4);
+        }
+
+        .title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
         .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-top: 4px;
         }
-        
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0 10px;
+        }
+
+        .pill {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(99,102,241,0.12);
+            color: #c7d2fe;
+            border: 1px solid rgba(99,102,241,0.3);
+            font-size: 0.85rem;
+        }
+
+        .section-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 18px;
+            padding: 18px 18px 12px;
+            margin-top: 16px;
+        }
+
+        .section-title {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            color: #e5e7ef;
+        }
+
+        .section-text {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 0.97rem;
+        }
+
         .message-form {
-            margin-bottom: 30px;
-        }
-        
-        .input-group {
             display: flex;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-top: 14px;
         }
-        
-        input[type="text"] {
+
+        .message-form input[type="text"] {
             flex: 1;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: all 0.3s;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.05);
+            color: #e5e7ef;
+            font-size: 0.97rem;
         }
-        
-        input[type="text"]:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+
+        .message-form input[type="text"]:focus {
+            outline: 2px solid rgba(99,102,241,0.5);
+            border-color: rgba(99,102,241,0.5);
         }
-        
-        button {
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+
+        .message-form button {
+            padding: 0 18px;
             border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.01em;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.12s ease, box-shadow 0.2s ease;
+            box-shadow: 0 12px 30px rgba(99,102,241,0.25);
         }
-        
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        button:active {
-            transform: translateY(0);
-        }
-        
-        .messages-section {
-            margin-top: 40px;
-        }
-        
-        .messages-section h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        
-        .messages-list {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        
-        .message-item {
-            background: #f8f9fa;
-            padding: 15px 20px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            animation: slideIn 0.3s ease;
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .no-messages {
-            text-align: center;
-            color: #999;
-            padding: 40px;
-            font-style: italic;
-        }
-        
+
+        .message-form button:hover { transform: translateY(-1px); }
+        .message-form button:active { transform: translateY(0); }
+
         .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(52,211,153,0.12);
+            color: #bbf7d0;
+            border: 1px solid rgba(52,211,153,0.35);
             display: none;
-            animation: slideIn 0.3s ease;
         }
-        
-        /* Scrollbar styling */
-        .messages-list::-webkit-scrollbar {
-            width: 8px;
+
+        .messages-block {
+            margin-top: 6px;
+            display: grid;
+            gap: 12px;
+            max-height: 420px;
+            overflow-y: auto;
+            padding-right: 6px;
         }
-        
-        .messages-list::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
+
+        .message-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: #e5e7ef;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            animation: rise 0.25s ease;
         }
-        
-        .messages-list::-webkit-scrollbar-thumb {
-            background: #667eea;
-            border-radius: 10px;
+
+        .message-item::before {
+            content: '●';
+            color: #60a5fa;
+            margin-right: 8px;
+            font-size: 0.8rem;
         }
-        
-        .messages-list::-webkit-scrollbar-thumb:hover {
-            background: #764ba2;
+
+        .no-messages {
+            color: #9ca3af;
+            text-align: center;
+            padding: 28px 10px;
+            border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* scrollbar */
+        .messages-block::-webkit-scrollbar { width: 8px; }
+        .messages-block::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>📝 Message Board</h1>
-        <p class="subtitle">Two-Tier Flask App with MySQL</p>
-        
-        <div class="message-form">
-            <div class="success-message" id="successMessage">
-                Message added successfully! 🎉
-            </div>
-            <form id="messageForm">
-                <div class="input-group">
-                    <input 
-                        type="text" 
-                        id="new_message" 
-                        name="new_message" 
-                        placeholder="Enter your message here..." 
-                        required
-                    >
-                    <button type="submit">Send</button>
+    <div class="card">
+        <div>
+            <div class="header">
+                <div class="avatar"></div>
+                <div>
+                    <div class="title">Venkatesh Kattamuri</div>
+                    <div class="subtitle">DevOps & Cloud | Two-Tier Flask + MySQL</div>
                 </div>
-            </form>
+            </div>
+
+            <div class="pill-row">
+                <div class="pill">Docker & Docker Compose</div>
+                <div class="pill">Jenkins CI/CD</div>
+                <div class="pill">AWS EC2</div>
+                <div class="pill">MySQL</div>
+                <div class="pill">Python Flask</div>
+            </div>
+
+            <div class="section-card">
+                <div class="section-title">About this app</div>
+                <p class="section-text">
+                    A sleek two-tier Flask application backed by MySQL. Messages persist thanks to Docker volumes and a dedicated network, and CI/CD keeps deployments reliable.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <div class="section-title">Add a message</div>
+                <div class="success-message" id="successMessage">Message added successfully! 🎉</div>
+                <form id="messageForm" class="message-form">
+                    <input type="text" id="new_message" name="new_message" placeholder="Share a thought for Venkatesh..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
         </div>
-        
-        <div class="messages-section">
-            <h2>Messages</h2>
-            <div class="messages-list" id="messagesList">
+
+        <div class="section-card" style="height:100%;">
+            <div class="section-title">Messages</div>
+            <div class="messages-block" id="messagesList">
                 {% if messages %}
                     {% for message in messages %}
-                    <div class="message-item">{{ message[0] }}</div>
+                        <div class="message-item">{{ message[0] }}</div>
                     {% endfor %}
                 {% else %}
                     <div class="no-messages">No messages yet. Be the first to send one!</div>
