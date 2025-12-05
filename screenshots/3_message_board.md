@@ -1,1 +1,0 @@
-<!-- Placeholder for Screenshot 3: Message Board UI -->
