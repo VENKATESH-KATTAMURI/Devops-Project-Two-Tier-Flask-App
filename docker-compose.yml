@@ -33,6 +33,9 @@ services:
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
       - MYSQL_DB=devops
+      - FLASK_DEBUG=1
+    volumes:
+      - .:/app
     networks:
       - two-tier-nt
     depends_on:
