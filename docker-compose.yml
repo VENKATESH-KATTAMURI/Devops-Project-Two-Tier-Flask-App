@@ -3,22 +3,19 @@ version: "3.8"
 services:
   mysql:
     container_name: mysql
-    image: mysql
+    image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "devops"
     ports:
       - "3306:3306"
-
     volumes:
       - mysql_data:/var/lib/mysql
-
     networks:
       - two-tier-nt
-
     restart: always
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot","-proot"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
       interval: 10s
       timeout: 5s
       retries: 5
