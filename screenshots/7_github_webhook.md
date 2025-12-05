@@ -1,0 +1,1 @@
+<!-- Placeholder for Screenshot 7: GitHub Webhook -->

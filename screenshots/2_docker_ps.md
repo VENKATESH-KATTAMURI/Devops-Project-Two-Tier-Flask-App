@@ -1,0 +1,1 @@
+<!-- Placeholder for Screenshot 2: Docker Containers Running -->

@@ -24,7 +24,43 @@ docker compose down
 
 ---
 
-## 📦 Tech Stack
+## 📸 Screenshots
+
+### 1. Application Home Page
+![App Home](./screenshots/1_app_home.md)
+*Landing page with Venkatesh Kattamuri branding and message board interface*
+
+### 2. Docker Containers Status
+![Docker PS](./screenshots/2_docker_ps.md)
+*Running containers: Flask app + MySQL database in healthy state*
+
+### 3. Message Board UI
+![Message Board](./screenshots/3_message_board.md)
+*Interactive message board with real-time submissions and persistent storage*
+
+### 4. Jenkins Pipeline Build
+![Jenkins Pipeline](./screenshots/4_jenkins_pipeline.md)
+*Automated CI/CD pipeline: Clone → Build → Deploy stages*
+
+### 5. MySQL Database Verification
+![MySQL Data](./screenshots/5_mysql_data.md)
+*Persistent messages stored in MySQL database with data persistence*
+
+### 6. Docker Compose Logs
+![Docker Logs](./screenshots/6_docker_logs.md)
+*Container logs showing Flask app running and MySQL healthy status*
+
+### 7. GitHub Webhook Configuration
+![GitHub Webhook](./screenshots/7_github_webhook.md)
+*Webhook setup for automatic Jenkins trigger on GitHub push*
+
+### 8. AWS EC2 Deployment
+![AWS EC2](./screenshots/8_aws_ec2.md)
+*Production deployment on AWS EC2 with running containers and services*
+
+---
+
+## 🛠️ Tech Stack
 
 - **Frontend**: Python Flask + Jinja2
 - **Database**: MySQL 8.0
@@ -198,6 +234,28 @@ nano app.py
 ## 📖 Full Docs
 
 For detailed setup, refer to [Full README Guide](./DETAILED_README.md)
+
+---
+
+## 📸 Adding Screenshots
+
+To add actual screenshots:
+
+1. Take screenshots of each step (app running, Docker output, Jenkins, etc.)
+2. Save them in `screenshots/` folder:
+   - `1_app_home.png` - Flask app home page
+   - `2_docker_ps.png` - Docker compose ps output
+   - `3_message_board.png` - Message board UI
+   - `4_jenkins_pipeline.png` - Jenkins job output
+   - `5_mysql_data.png` - MySQL query results
+   - `6_docker_logs.png` - Docker compose logs
+   - `7_github_webhook.png` - GitHub webhook config
+   - `8_aws_ec2.png` - Running app on AWS
+
+3. Update README image references:
+```markdown
+![App Home](./screenshots/1_app_home.png)
+```
 
 ---
 

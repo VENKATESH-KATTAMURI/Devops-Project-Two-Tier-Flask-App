@@ -1,0 +1,1 @@
+<!-- Placeholder for Screenshot 8: AWS EC2 Deployment -->

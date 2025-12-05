@@ -1,0 +1,1 @@
+<!-- Placeholder for Screenshot 6: Docker Compose Logs -->

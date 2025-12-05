@@ -1,0 +1,1 @@
+<!-- Placeholder for Screenshot 5: MySQL Database -->

@@ -1,0 +1,1 @@
+<!-- Placeholder for Screenshot 1: Application Home Page -->
